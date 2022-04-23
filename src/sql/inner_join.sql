@@ -24,9 +24,6 @@ update pets set name='Альма' where species = 'Собака';
 update pets set name='Тимофей' where species = 'Кошка';
 update pets set name='Бельчиха' where species = 'Белка';
 
-insert into pets(species, name, owner) values('Дельфин', 'Сплинтер', 3);
-
-select * from pets
-join users u on pets.owner = u.id;
-
+select * from pets join users u on pets.owner = u.id;
 select id as Идентификатор, name as Имя from users;
+select id as идентификатор, name as кличка, owner as владелец, species as животное from pets;
