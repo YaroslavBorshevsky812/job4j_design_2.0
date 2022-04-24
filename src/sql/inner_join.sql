@@ -8,7 +8,7 @@ create table pets (
     id serial primary key,
     name varchar(255),
     species varchar(255),
-    owner int references users(id) unique
+    owner int references users(id)
 );
 
 insert into users(name, age) values('Yaroslav', 25);
