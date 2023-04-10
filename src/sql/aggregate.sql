@@ -51,24 +51,14 @@ where p.name = 'Steve';
 //Средняя цена всех девайсов
 select avg(price) from devices;
 
-select avg(price) from devices_people dp
-                  join people p on p.id = dp.people_id
-                  join devices d on d.id = dp.device_id
-where p.name = 'Steve';
-
-select avg(price) from devices_people dp
+select p.name, avg(price) from devices_people dp
                            join people p on p.id = dp.people_id
                            join devices d on d.id = dp.device_id
-where p.name = 'Mike';
+group by p.name;
 
-select avg(price) from devices_people dp
+select p.name, avg(price) from devices_people dp
                            join people p on p.id = dp.people_id
                            join devices d on d.id = dp.device_id
-where p.name = 'Bernard' ;
-
-select avg(price) from devices_people dp
-                           join people p on p.id = dp.people_id
-                           join devices d on d.id = dp.device_id
-where p.name = 'Bernard' having avg(d.price) > 5000;
+group by p.name having avg(d.price) > 5000;
 
 
